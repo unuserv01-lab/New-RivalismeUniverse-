@@ -1,3 +1,4 @@
+          
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,16 +127,21 @@
             z-index: 3;
             animation: bubbleFloat 2s ease-in-out infinite;
         }
-
-        .robot-bubble::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid rgba(255, 20, 147, 0.9);
+.robot-bubble {
+    position: absolute;
+    bottom: 130px; /* Fixed position */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 20, 147, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 3;
+    animation: bubbleFloat 2s ease-in-out infinite;
+    width: max-content;
+    max-width: 200px;
         }
 
         @keyframes bubbleFloat {
@@ -284,16 +290,21 @@
             background: rgba(218, 165, 32, 0.9);
         }
 
-        /* HOVER EFFECTS */
-        .character-avatar:hover .persona-robot {
-            display: flex;
-        }
+        /* HOVER EFFECTS - FIXED VERSION */
+.character-avatar.unuser-robot:hover .persona-robot,
+.character-avatar.solara-robot:hover .persona-robot, 
+.character-avatar.nexar-robot:hover .persona-robot,
+.character-avatar.einstein-robot:hover .persona-robot,
+.character-avatar.nietzsche-robot:hover .persona-robot,
+.character-avatar.alkhwarizmi-robot:hover .persona-robot {
+    display: flex !important;
+}
 
-        .character-avatar:hover {
-            border-color: #ff1493;
-            box-shadow: 0 0 30px rgba(255, 20, 147, 0.6);
-            transform: scale(1.1);
-        }
+.character-avatar:hover {
+    border-color: #ff1493;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6);
+    transform: scale(1.1);
+}
 
         /* ========================= */
         /* LOADING SCREEN */
@@ -1130,20 +1141,24 @@
             animation: spin 1s ease-in-out infinite;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .portal-main-title { font-size: 2.5rem; }
-            .portal-categories { grid-template-columns: 1fr; gap: 2rem; }
-            .category-portal { padding: 2rem; }
-            .character-grid { grid-template-columns: 1fr; }
-            .back-portal { position: relative; top: auto; left: auto; margin-bottom: 2rem; display: inline-block; }
-            .nav-buttons { flex-direction: column; align-items: center; }
-            .nav-buttons button { width: 200px; margin: 0.5rem 0; }
-            .versus-display { flex-direction: column; gap: 1rem; }
-            .character-avatar { width: 120px; height: 120px; }
-            .robot-bubble { font-size: 0.7rem; padding: 8px 12px; }
-        }
-
+        /* Responsive Design */@media (max-width: 768px) {
+    .portal-main-title { font-size: 2.5rem; }
+    .portal-categories { grid-template-columns: 1fr; gap: 2rem; }
+    .category-portal { padding: 2rem; }
+    .character-grid { grid-template-columns: 1fr; }
+    .back-portal { position: relative; top: auto; left: auto; margin-bottom: 2rem; display: inline-block; }
+    .nav-buttons { flex-direction: column; align-items: center; }
+    .nav-buttons button { width: 200px; margin: 0.5rem 0; }
+    .versus-display { flex-direction: column; gap: 1rem; }
+    .character-avatar { width: 120px; height: 120px; }
+    .robot-bubble { 
+        font-size: 0.7rem; 
+        padding: 8px 12px;
+        bottom: 110px; /* Fixed for mobile */
+        max-width: 150px;
+    }
+}
+        
     </style>
 </head>
 <body>
@@ -1874,3 +1889,4 @@
     </script>
 </body>
 </html>
+ 
